@@ -23,4 +23,30 @@ class ComposerBridge
             }
         }
     }
+
+
+    static function moveBootstrapAssets(): void {
+        $root = __DIR__ . '/../../../';
+        $source = $root.'vendor/twbs/bootstrap/dist';
+        $destination = $root.'admin/public/bootstrap';
+
+        if (!is_dir($destination)) {
+            mkdir($destination, 0777, true);
+        }
+
+        $files = [
+            'css/bootstrap.min.css',
+            'js/bootstrap.bundle.min.js'
+        ];
+
+        foreach ($files as $file) {
+            $sourceFile = $source . '/' . $file;
+            $destinationFile = $destination . '/' . basename($file);
+
+            if (file_exists($sourceFile)) {
+                copy($sourceFile, $destinationFile);
+            }
+        }
+    }
 }
+

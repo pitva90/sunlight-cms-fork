@@ -677,7 +677,9 @@ abstract class Admin
         return [
             'extend_event' => 'admin.head',
             'css' => [
-                'admin' => Router::path('admin/script/style.php', ['query' => ['s' => 0]]),
+                'bootstrap' => Router::path('admin/public/bootstrap/bootstrap.min.css'),
+                'admin' => Router::path('admin/public/admin.css'),
+                //'admin' => Router::path('admin/script/style.php', ['query' => ['s' => 0]]),
             ],
             'js' => [
                 'jquery' => Router::path('system/public/jquery.js'),
@@ -699,6 +701,7 @@ abstract class Admin
         return [
             'extend_event' => 'admin.head',
             'css' => [
+                'bootstrap' => Router::path('admin/public/bootstrap/bootstrap.min.css'),
                 'admin' => Router::path('admin/script/style.php', ['query' => $styleQuery]),
             ],
             'js' => [
@@ -708,6 +711,7 @@ abstract class Admin
                 'scrollwatch' => Router::path('system/public/scrollwatch.js'),
                 'scrollfix' => Router::path('system/public/scrollfix.js'),
                 'jquery_ui' => Router::path('admin/public/jquery-ui.js'),
+                'bootstrap' => Router::path('admin/public/bootstrap/bootstrap.bundle.min.js'),
                 'admin' => Router::path('admin/public/admin.js'),
             ],
             'js_before' => "\n" . Core::getJavascript([

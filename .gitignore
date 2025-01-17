@@ -34,6 +34,7 @@
 !/plugins/templates/.htaccess
 
 /vendor/
+/admin/public/bootstrap/
 /bin/
 /composer.lock
 /config.php
